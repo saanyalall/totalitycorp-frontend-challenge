@@ -1,3 +1,14 @@
+https://sitechallenge.netlify.app/
+
+I have made a ecommerce website using react.js and material UI
+I have used the functionality in 'add to cart' when user clicked on this button, numbers will be showed on the cart-icons and when user 
+clicked on the cart-icon it will directly take you the /cart where users can see the selected items and they can set accordingly wheather
+they want to increase, decrease and remove the selected item, with the increasing,decreasing total cost will also work accordingly. 
+When user increase the selected item total cost will increase and when user wanted to decrease that particular item then total cost will reduce.
+Also made a shipping and payment details with submit button wrapped in the card tag where user clicked the submit it will display order is placed.
+And when there is not items in the cart then it will display 'cart is empty' and also display the button 'back to main page' where user can reach to the home page.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
