@@ -4,7 +4,7 @@ import Listing from './components/Listing';
 import Cart from './components/Cart';
 import CartPage from './components/CartPage';
 import products from './products';
-import Checkout from "./components/Checkout";
+
 
 const App = () => {
   const [cartItems, setCartItems] = useState([]);

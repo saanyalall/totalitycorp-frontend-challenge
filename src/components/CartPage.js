@@ -12,12 +12,14 @@ const CartPage = ({ cartItems, increaseQuantity, decreaseQuantity, removeFromCar
   const calculateTotalCost = () => {
     return cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
   };
-const [isSubmitted, setIsSubmitted]=useState(false);
-const handleFormSubmit = (e) =>{
-   e.preventDefault();
-   console.log('form submit');
-   setIsSubmitted(true);
-}
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log('form submit');
+    setIsSubmitted(true);
+  };
+
   return (
     <div className="cart-container">
       {cartItems.length === 0 ? (
@@ -41,24 +43,18 @@ const handleFormSubmit = (e) =>{
                   </p>
                 </div>
                 <div className="item-icons">
-                  <AddCircleIcon
-                    onClick={() => increaseQuantity(item.id)}
-                    className="icon"
-                  />
-                  <DoDisturbOnIcon
-                    onClick={() => decreaseQuantity(item.id)}
-                    className="icon"
-                  />
-                  <DeleteIcon
-                    onClick={() => removeFromCart(item.id)}
-                    className="icon"
-                  />
+                  <AddCircleIcon onClick={() => increaseQuantity(item.id)} className="icon" />
+                  <DoDisturbOnIcon onClick={() => decreaseQuantity(item.id)} className="icon" />
+                  <DeleteIcon onClick={() => removeFromCart(item.id)} className="icon" />
                 </div>
               </CardContent>
             </Card>
           ))}
         </div>
       )}
+      <div className="total-cost">
+            <h3>Total Cost: ${calculateTotalCost()}</h3>
+          </div>
 
       {cartItems.length > 0 && (
         <Card className="shipping-payment">
@@ -94,7 +90,11 @@ const handleFormSubmit = (e) =>{
             </form>
           </div>
 
-          <button className="submit-button" onClick={handleFormSubmit}>Submit Order</button>
+        
+
+          <button className="submit-button" onClick={handleFormSubmit}>
+            Submit Order
+          </button>
           {isSubmitted && <div className="order-placed">Your order is placed!</div>}
         </Card>
       )}
@@ -109,6 +109,7 @@ const handleFormSubmit = (e) =>{
 };
 
 export default CartPage;
+
 
 
 
